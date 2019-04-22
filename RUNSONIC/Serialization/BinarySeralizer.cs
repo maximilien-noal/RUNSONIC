@@ -11,11 +11,19 @@ namespace Sega.Sonic3k.Launcher.Serialization
     {
         private const string _fileName = "Sonic3K.BIN";
 
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <returns></returns>
         public static bool SaveToDisk()
         {
             return true;
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <returns></returns>
         public static bool LoadFromDisk()
         {
             return true;

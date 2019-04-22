@@ -29,6 +29,7 @@ namespace Sega.Sonic3k.Launcher.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
+        private readonly string _workDir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         private Process _gameProc;
         private System.Windows.Forms.Timer _waitTimer;
 
@@ -54,7 +55,8 @@ namespace Sega.Sonic3k.Launcher.ViewModel
         {
             try
             {
-                _gameProc = Process.Start(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "SONIC3K.EXE"), CurrentGame.Argument);
+                EnableOrDisableGraphicsWrapper();
+                _gameProc = Process.Start(Path.Combine(_workDir, "SONIC3K.EXE"), CurrentGame.Argument);
                 Application.Current.Dispatcher.Invoke((Action)delegate
                 {
                     Application.Current.MainWindow.WindowState = WindowState.Minimized;
@@ -71,6 +73,49 @@ namespace Sega.Sonic3k.Launcher.ViewModel
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void EnableOrDisableGraphicsWrapper()
+        {
+            try
+            {
+                string[] dgVoodooFiles = { "D3DImm.DLL", "DDraw.DLL", "D3D8.dll", "D3D9.dll", "Glide.dll", "Glide2x.dll", "Glide3x.dll" };
+                foreach (var path in dgVoodooFiles)
+                {
+                    string fullPath = Path.Combine(_workDir, path);
+                    string fullPathDisabled = Path.Combine(_workDir, string.Format("{0}{1}", Path.GetFileNameWithoutExtension(path), "Disabled.dll"));
+                    RenameFile(fullPath, fullPathDisabled);
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void RenameFile(string ddrawPath, string ddrawDisabledPath)
+        {
+            if (Properties.Settings.Default.IsDdrawWrapperDisabled)
+            {
+                if (File.Exists(ddrawPath))
+                {
+                    if (File.Exists(ddrawDisabledPath))
+                    {
+                        File.Delete(ddrawDisabledPath);
+                    }
+                    File.Move(ddrawPath, ddrawDisabledPath);
+                }
+            }
+            else
+            {
+                if (File.Exists(ddrawDisabledPath))
+                {
+                    if (File.Exists(ddrawPath) == false)
+                    {
+                        File.Move(ddrawDisabledPath, ddrawPath);
+                    }
+                }
             }
         }
 

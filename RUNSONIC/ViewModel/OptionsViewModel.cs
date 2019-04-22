@@ -14,6 +14,8 @@ namespace Sega.Sonic3k.Launcher.ViewModel
     {
         public OptionsViewModel()
         {
+            Model.IsDdrawWrapperDisabled = Properties.Settings.Default.IsDdrawWrapperDisabled;
+
             Accept = new RelayCommand(AcceptExecute);
         }
 
@@ -32,7 +34,8 @@ namespace Sega.Sonic3k.Launcher.ViewModel
 
         public void AcceptExecute()
         {
-
+            Properties.Settings.Default.IsDdrawWrapperDisabled = Model.IsDdrawWrapperDisabled;
+            Properties.Settings.Default.Save();
         }
 
         public ICommand Accept { get; private set; }
