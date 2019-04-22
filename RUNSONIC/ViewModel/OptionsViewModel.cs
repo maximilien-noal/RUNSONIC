@@ -1,12 +1,9 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
+
 using Sega.Sonic3k.Launcher.Model;
 using Sega.Sonic3k.Launcher.Serialization;
-using Sega.Sonic3k.Launcher.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
 using System.Windows.Input;
 
 namespace Sega.Sonic3k.Launcher.ViewModel
