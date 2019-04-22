@@ -61,6 +61,33 @@ namespace Sega.Sonic3k.Launcher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disable DDRAW Wrapper.
+        /// </summary>
+        internal static string DisableDdrawWrapper {
+            get {
+                return ResourceManager.GetString("DisableDdrawWrapper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning : NOT RECOMMENDED.
+        /// </summary>
+        internal static string DisableDdrawWrapperWarning {
+            get {
+                return ResourceManager.GetString("DisableDdrawWrapperWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _Exit.
         /// </summary>
         internal static string Exit {
@@ -70,11 +97,83 @@ namespace Sega.Sonic3k.Launcher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FM Synthetizer.
+        /// </summary>
+        internal static string FMSynth {
+            get {
+                return ResourceManager.GetString("FMSynth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to General MIDI.
+        /// </summary>
+        internal static string GeneralMIDI {
+            get {
+                return ResourceManager.GetString("GeneralMIDI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check this box if you experience graphical glitches.
+        /// </summary>
+        internal static string GraphicalGlitches {
+            get {
+                return ResourceManager.GetString("GraphicalGlitches", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Music Settings.
+        /// </summary>
+        internal static string MusicHeader {
+            get {
+                return ResourceManager.GetString("MusicHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Background Music.
+        /// </summary>
+        internal static string NoBkgMusic {
+            get {
+                return ResourceManager.GetString("NoBkgMusic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Sound Effects.
+        /// </summary>
+        internal static string NoSoundFx {
+            get {
+                return ResourceManager.GetString("NoSoundFx", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        internal static string OK {
+            get {
+                return ResourceManager.GetString("OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _Options....
         /// </summary>
         internal static string Options {
             get {
                 return ResourceManager.GetString("Options", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Options.
+        /// </summary>
+        internal static string OptionsDialog {
+            get {
+                return ResourceManager.GetString("OptionsDialog", resourceCulture);
             }
         }
         

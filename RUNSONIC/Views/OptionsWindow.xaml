@@ -9,23 +9,33 @@
         xmlns:lex="http://wpflocalizeextension.codeplex.com"
   	    lex:ResxLocalizationProvider.DefaultAssembly="RUNSONIC"
   	    lex:ResxLocalizationProvider.DefaultDictionary="Localization"
-        FontWeight="SemiBold" ResizeMode="NoResize" WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize" WindowStartupLocation="CenterOwner"
         Background="#FFF0F0F0" FocusManager.FocusedElement="{Binding ElementName=OKButton}"
-        Title="{lex:Loc OptionsDialog}" Height="154" Width="517"
+        Title="{lex:Loc OptionsDialog}" Height="154" Width="520"
         DataContext="{Binding Source={StaticResource Locator}, Path=Options}">
-    <Grid>
+    <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="2.5*" />
+            <ColumnDefinition Width="2.0*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="0.6*" />
         </Grid.RowDefinitions>
-        <GroupBox Header="{lex:Loc MusicTitle}" Grid.Column="0" Grid.RowSpan="3">
-            
+        <GroupBox Header="{lex:Loc MusicHeader}" Grid.Column="0" Grid.RowSpan="3">
+            <Grid Margin="0,10,0,10">
+                <RadioButton GroupName="Music" Content="{lex:Loc NoBkgMusic}" />
+                <RadioButton GroupName="Music" Content="{lex:Loc FMSynth}" VerticalAlignment="Center" />
+                <RadioButton GroupName="Music" Content="{lex:Loc GeneralMIDI}" VerticalAlignment="Bottom" />
+            </Grid>
         </GroupBox>
+        <StackPanel Grid.RowSpan="2" Grid.Column="1" Margin="5">
+            <CheckBox Content="{lex:Loc NoSoundFx}" Margin="1" />
+            <CheckBox Content="{lex:Loc GraphicalGlitches}" Margin="1" />
+            <CheckBox Content="{lex:Loc DisableDdrawWrapper}" Margin="1" />
+            <Label Content="{lex:Loc DisableDdrawWrapperWarning}" Margin="0" Padding="0" />
+        </StackPanel>
         <Grid Grid.Row="2" Grid.Column="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.3*" />
