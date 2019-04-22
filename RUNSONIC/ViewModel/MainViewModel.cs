@@ -59,7 +59,7 @@ namespace Sega.Sonic3k.Launcher.ViewModel
                 _gameProc = Process.Start(Path.Combine(_workDir, "SONIC3K.EXE"), CurrentGame.Argument);
                 Application.Current.Dispatcher.Invoke((Action)delegate
                 {
-                    Application.Current.MainWindow.WindowState = WindowState.Minimized;
+                    Application.Current.MainWindow.Visibility = Visibility.Collapsed;
                 });
                 _gameProc.WaitForInputIdle(5000);
                 StartKillTimer();
