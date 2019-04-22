@@ -1,0 +1,48 @@
+﻿<Window x:Class="Sega.Sonic3k.Launcher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sega.Sonic3k.Launcher"
+        mc:Ignorable="d" FontWeight="SemiBold"
+        DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
+        Title="Sonic and Knuckles Collection" Width="484" Height="473" Icon="/RUNSONIC;component/Resources/icon.ico" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
+        Background="#FFF0F0F0" FocusManager.FocusedElement="{Binding ElementName=PlayButton}">
+    <Window.InputBindings>
+        <KeyBinding Key="S" Command="{Binding Exit}" />
+        <KeyBinding Key="O" Command="{Binding ShowOptions}" />
+        <KeyBinding Key="J" Command="{Binding Play}" />
+    </Window.InputBindings>
+    <Grid Margin="14">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="340" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="4*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderThickness="1" BorderBrush="Black">
+            <Image Source="{Binding CurrentGame.Image}" />
+        </Border>
+        <Grid Grid.Row="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Button Name="PlayButton" Command="{Binding Play}" Content="{Binding CurrentGame.Name, FallbackValue=_Play Sonic &amp; Knuckles}" HorizontalAlignment="Stretch" Grid.Column="0" VerticalAlignment="Top" />
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" VerticalAlignment="Top" Grid.Column="1">
+                    <Button Content="◄" Command="{Binding GoLeft}"  />
+                    <Button Content="►" Command="{Binding GoRight}" />
+                </StackPanel>
+            </Grid>
+            <Grid VerticalAlignment="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Button Content="_Options..." Grid.Column="0" HorizontalAlignment="Stretch" Command="{Binding ShowOptions}" />
+                <Button Content="_Exit" Grid.Column="2" HorizontalAlignment="Stretch" Command="{Binding Exit}" IsCancel="True" />
+            </Grid>
+         </Grid>
+    </Grid>
+</Window>
