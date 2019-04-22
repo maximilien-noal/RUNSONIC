@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using Sega.Sonic3k.Launcher.Model;
+using Sega.Sonic3k.Launcher.Serialization;
 using Sega.Sonic3k.Launcher.Views;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,7 @@ namespace Sega.Sonic3k.Launcher.ViewModel
     {
         public OptionsViewModel()
         {
-            Model.IsDdrawWrapperDisabled = Properties.Settings.Default.IsDdrawWrapperDisabled;
-
+            Model = BinarySerializer.LoadFromDisk();
             Accept = new RelayCommand(AcceptExecute);
         }
 
@@ -34,8 +34,7 @@ namespace Sega.Sonic3k.Launcher.ViewModel
 
         public void AcceptExecute()
         {
-            Properties.Settings.Default.IsDdrawWrapperDisabled = Model.IsDdrawWrapperDisabled;
-            Properties.Settings.Default.Save();
+            BinarySerializer.SaveToDisk(Model);
         }
 
         public ICommand Accept { get; private set; }

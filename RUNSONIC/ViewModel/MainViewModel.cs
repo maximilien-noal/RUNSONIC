@@ -62,18 +62,26 @@ namespace Sega.Sonic3k.Launcher.ViewModel
                     Application.Current.MainWindow.WindowState = WindowState.Minimized;
                 });
                 _gameProc.WaitForInputIdle(5000);
-                _waitTimer = new System.Windows.Forms.Timer();
-                _waitTimer.Tick += WaitTimer_Tick;
-                _waitTimer.Interval = 1000;
-                _waitTimer.Enabled = true;
-                _waitTimer.Start();
-                Application.Current.Exit += delegate { _waitTimer.Dispose(); };
+                StartKillTimer();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        /// <summary>
+        /// Works around a reproductible bug : when the game's window is no more the game exited, but the process still exists
+        /// </summary>
+        private void StartKillTimer()
+        {
+            _waitTimer = new System.Windows.Forms.Timer();
+            _waitTimer.Tick += WaitTimer_Tick;
+            _waitTimer.Interval = 1000;
+            _waitTimer.Enabled = true;
+            _waitTimer.Start();
+            Application.Current.Exit += delegate { _waitTimer.Dispose(); };
         }
 
         private void EnableOrDisableGraphicsWrapper()
@@ -129,12 +137,14 @@ namespace Sega.Sonic3k.Launcher.ViewModel
                     _gameProc.Kill();
                     Application.Current.Dispatcher.Invoke((Action)delegate
                     {
+                        //We killed the game's process, time for us to exit.
                         Application.Current.MainWindow.Close();
                     });
                 }
             }
             catch
             {
+                //the game already exited, there's no need for us any longer.
                 Application.Current.Dispatcher.Invoke((Action)delegate
                 {
                     Application.Current.MainWindow.Close();
