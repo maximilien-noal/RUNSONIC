@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sega.Sonic3k.Launcher"
         xmlns:lex="http://wpflocalizeextension.codeplex.com"
+        xmlns:b="clr-namespace:Sega.Sonic3k.Launcher.Behaviors"
   	    lex:ResxLocalizationProvider.DefaultAssembly="RUNSONIC"
   	    lex:ResxLocalizationProvider.DefaultDictionary="Localization"
         mc:Ignorable="d" FontWeight="SemiBold"
@@ -31,7 +32,7 @@
                     <ColumnDefinition Width="10*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                <Button Name="PlayButton" Command="{Binding Play}" HorizontalAlignment="Stretch" Grid.Column="0" VerticalAlignment="Top">
+                <Button Name="PlayButton" IsDefault="True" Command="{Binding Play}" HorizontalAlignment="Stretch" Grid.Column="0" VerticalAlignment="Top">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="{lex:Loc Play}" Padding="0" />
                         <Label Content=" " Padding="0" />
@@ -49,7 +50,7 @@
                     <ColumnDefinition Width="4*" />
                     <ColumnDefinition Width="2*" />
                 </Grid.ColumnDefinitions>
-                <Button Content="{lex:Loc Options}" Grid.Column="0" HorizontalAlignment="Stretch" Command="{Binding ShowOptions}" />
+                <Button Content="{lex:Loc Options}" Grid.Column="0" HorizontalAlignment="Stretch" b:OpenOptionsOnClickBehavior.IsEnabled="True" />
                 <Button Content="{lex:Loc Exit}" Grid.Column="2" HorizontalAlignment="Stretch" Command="{Binding Exit}" IsCancel="True" />
             </Grid>
          </Grid>

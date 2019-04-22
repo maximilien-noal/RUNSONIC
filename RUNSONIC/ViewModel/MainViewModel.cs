@@ -145,11 +145,6 @@ namespace Sega.Sonic3k.Launcher.ViewModel
 
         public ICommand GoRight { get; private set; }
 
-        private void ShowOptions()
-        {
-
-        }
-
         private ObservableCollection<GameModel> _games = new ObservableCollection<GameModel>();
         public ObservableCollection<GameModel> Games
         {
