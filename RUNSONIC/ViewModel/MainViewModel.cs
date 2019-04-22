@@ -30,16 +30,16 @@ namespace Sega.Sonic3k.Launcher.ViewModel
     public class MainViewModel : ViewModelBase
     {
         private Process _gameProc;
-        private System.Windows.Forms.Timer _waitTimer = new System.Windows.Forms.Timer();
+        private System.Windows.Forms.Timer _waitTimer;
 
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
         public MainViewModel()
         {
-            Games.Add(new GameModel() { Name = "_Play Sonic 3 & Knuckles", Image = new BitmapImage(new Uri("pack://application:,,,/RUNSONIC;component/Resources/Bitmap107.bmp"))});
-            Games.Add(new GameModel() { Argument = "-3", Name = "_Play Sonic 3", Image = new BitmapImage(new Uri("pack://application:,,,/RUNSONIC;component/Resources/Bitmap109.bmp"))});
-            Games.Add(new GameModel() { Argument = "-k", Name = "_Play Sonic & Knuckles", Image = new BitmapImage(new Uri("pack://application:,,,/RUNSONIC;component/Resources/Bitmap108.bmp")) });
+            Games.Add(new GameModel() { Name = "Sonic 3 & Knuckles", Image = new BitmapImage(new Uri("pack://application:,,,/RUNSONIC;component/Resources/Bitmap107.bmp"))});
+            Games.Add(new GameModel() { Argument = "-3", Name = "Sonic 3", Image = new BitmapImage(new Uri("pack://application:,,,/RUNSONIC;component/Resources/Bitmap109.bmp"))});
+            Games.Add(new GameModel() { Argument = "-k", Name = "Sonic & Knuckles", Image = new BitmapImage(new Uri("pack://application:,,,/RUNSONIC;component/Resources/Bitmap108.bmp")) });
 
             CurrentGame = Games.FirstOrDefault();
 
@@ -61,10 +61,12 @@ namespace Sega.Sonic3k.Launcher.ViewModel
                     Application.Current.MainWindow.WindowState = WindowState.Minimized;
                 });
                 _gameProc.WaitForInputIdle(5000);
+                _waitTimer = new System.Windows.Forms.Timer();
                 _waitTimer.Tick += WaitTimer_Tick;
                 _waitTimer.Interval = 1000;
                 _waitTimer.Enabled = true;
                 _waitTimer.Start();
+                Application.Current.Exit += delegate { _waitTimer.Dispose(); };
 
             }
             catch (Exception ex)

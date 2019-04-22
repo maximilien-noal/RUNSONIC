@@ -11,12 +11,12 @@ namespace Sega.Sonic3k.Launcher
     /// </summary>
     public partial class App : Application, ISingleInstanceApp
     {
-        private const string Unique = "{8A0CF275-F646-4865-8EBE-D309F328AA68}";
+        private const string _uniqueId = "{8A0CF275-F646-4865-8EBE-D309F328AA68}";
 
         [STAThread]
         public static void Main()
         {
-            if (SingleInstance<App>.InitializeAsFirstInstance(Unique))
+            if (SingleInstance<App>.InitializeAsFirstInstance(_uniqueId))
             {
                 var application = new App();
 
@@ -28,16 +28,15 @@ namespace Sega.Sonic3k.Launcher
             }
         }
 
-        #region ISingleInstanceApp Members
-
+        /// <summary>
+        /// Handles command line arguments of second instance
+        /// </summary>
+        /// <param name="args"></param>
+        /// <returns></returns>
         public bool SignalExternalCommandLineArgs(IList<string> args)
         {
-            // handle command line arguments of second instance
-
             // do nothing
             return true;
         }
-
-        #endregion
     }
 }
