@@ -51,7 +51,7 @@
                     <ColumnDefinition Width="2*" />
                 </Grid.ColumnDefinitions>
                 <Button Content="{lex:Loc Options}" Grid.Column="0" HorizontalAlignment="Stretch" b:OpenOptionsOnClickBehavior.IsEnabled="True" />
-                <Button Content="{lex:Loc Exit}" Grid.Column="2" HorizontalAlignment="Stretch" Command="{Binding Exit}" IsCancel="True" />
+                <Button Content="{lex:Loc Exit}" Grid.Column="2" HorizontalAlignment="Stretch" IsCancel="True" b:CloseOnClickBehaviour.IsEnabled="True" />
             </Grid>
          </Grid>
     </Grid>

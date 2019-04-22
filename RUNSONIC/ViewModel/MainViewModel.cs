@@ -37,13 +37,12 @@ namespace Sega.Sonic3k.Launcher.ViewModel
         /// </summary>
         public MainViewModel()
         {
-            Games.Add(new GameModel() { Name = "Sonic 3 & Knuckles", Image = new BitmapImage(new Uri("pack://application:,,,/RUNSONIC;component/Resources/Bitmap107.bmp"))});
-            Games.Add(new GameModel() { Argument = "-3", Name = "Sonic 3", Image = new BitmapImage(new Uri("pack://application:,,,/RUNSONIC;component/Resources/Bitmap109.bmp"))});
-            Games.Add(new GameModel() { Argument = "-k", Name = "Sonic & Knuckles", Image = new BitmapImage(new Uri("pack://application:,,,/RUNSONIC;component/Resources/Bitmap108.bmp")) });
+            Games.Add(new GameModel("Sonic 3 & Knuckles", new BitmapImage(new Uri("pack://application:,,,/RUNSONIC;component/Resources/Bitmap107.bmp")), string.Empty));
+            Games.Add(new GameModel("Sonic 3", new BitmapImage(new Uri("pack://application:,,,/RUNSONIC;component/Resources/Bitmap109.bmp")), "-3"));
+            Games.Add(new GameModel("Sonic & Knuckles",new BitmapImage(new Uri("pack://application:,,,/RUNSONIC;component/Resources/Bitmap108.bmp")), "-k"));
 
             CurrentGame = Games.FirstOrDefault();
 
-            Exit = new RelayCommand(ExitExecute);
             GoLeft = new RelayCommand(GoLeftExecute);
             GoRight = new RelayCommand(GoRightExecute);
             Play = new RelayCommand(PlayExecute);
@@ -98,13 +97,6 @@ namespace Sega.Sonic3k.Launcher.ViewModel
             }
         }
 
-        public ICommand Exit { get; private set; }
-
-        private void ExitExecute()
-        {
-            Application.Current.MainWindow.Close();
-        }
-
         public ICommand GoLeft { get; private set; }
 
         public void GoLeftExecute()
@@ -149,18 +141,18 @@ namespace Sega.Sonic3k.Launcher.ViewModel
         public ObservableCollection<GameModel> Games
         {
             get => _games;
-            set
+            private set
             {
                 Set(() => Games, ref _games, value);
             }
         }
 
-        private GameModel _currentGame = new GameModel();
+        private GameModel _currentGame = null;
 
         public GameModel CurrentGame
         {
             get => _currentGame;
-            set
+            private set
             {
                 Set(() => CurrentGame, ref _currentGame, value);
             }

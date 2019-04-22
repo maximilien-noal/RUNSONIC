@@ -9,11 +9,18 @@ namespace Sega.Sonic3k.Launcher.Model
 {
     public class GameModel : ObservableObject
     {
+        public GameModel(string name, BitmapSource image, string arg)
+        {
+            Name = name;
+            Image = image;
+            Argument = arg;
+        }
+
         private BitmapSource _image = null;
         public BitmapSource Image
         {
             get => _image;
-            set
+            private set
             {
                 Set(() => Image, ref _image, value);
             }
@@ -23,7 +30,7 @@ namespace Sega.Sonic3k.Launcher.Model
         public string Name
         {
             get => _name;
-            set
+            private set
             {
                 Set(() => Name, ref _name, value);
             }
@@ -39,7 +46,7 @@ namespace Sega.Sonic3k.Launcher.Model
         public string Argument
         {
             get => _argument;
-            set
+            private set
             {
                 Set(() => Argument, ref _argument, value);
             }
