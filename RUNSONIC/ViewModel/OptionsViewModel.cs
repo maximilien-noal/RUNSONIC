@@ -27,8 +27,6 @@ namespace Sega.Sonic3k.Launcher.ViewModel
             }
         }
 
-        public ICommand SetNewMusicMode { get; private set; }
-
         public void AcceptExecute()
         {
             BinarySerializer.SaveToDisk(Model);

@@ -10,8 +10,6 @@ namespace Sega.Sonic3k.Launcher.Serialization
 {
     public static class BinarySerializer
     {
-        private const string _fileName = "Sonic3K.BIN";
-
         /// <summary>
         /// TODO
         /// </summary>
