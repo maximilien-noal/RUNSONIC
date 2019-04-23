@@ -12,7 +12,7 @@ namespace Sega.Sonic3k.Launcher.ViewModel
     {
         public OptionsViewModel()
         {
-            Model = BinarySerializer.LoadFromDisk();
+            Model = OptionsSerializer.LoadFromDisk();
             Accept = new RelayCommand(AcceptExecute);
         }
 
@@ -29,7 +29,7 @@ namespace Sega.Sonic3k.Launcher.ViewModel
 
         public void AcceptExecute()
         {
-            BinarySerializer.SaveToDisk(Model);
+            OptionsSerializer.SaveToDisk(Model);
         }
 
         public ICommand Accept { get; private set; }

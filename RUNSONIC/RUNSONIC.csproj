@@ -130,7 +130,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Localization.fr-FR.resx</DependentUpon>
     </Compile>
-    <Compile Include="Serialization\BinarySerializer.cs" />
+    <Compile Include="Serialization\OptionsSerializer.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\OptionsViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
