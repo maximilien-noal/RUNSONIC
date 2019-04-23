@@ -8,7 +8,7 @@
         xmlns:b="clr-namespace:Sega.Sonic3k.Launcher.Behaviors"
   	    lex:ResxLocalizationProvider.DefaultAssembly="RUNSONIC"
   	    lex:ResxLocalizationProvider.DefaultDictionary="Localization"
-        mc:Ignorable="d" FontWeight="SemiBold"
+        mc:Ignorable="d" FontWeight="Bold" FontFamily="Arial"
         DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
         Title="Sonic and Knuckles Collection" Width="484" Height="473" Icon="/RUNSONIC;component/Resources/icon.ico" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
         Background="#FFF0F0F0" FocusManager.FocusedElement="{Binding ElementName=PlayButton}">
@@ -47,7 +47,7 @@
             <Grid VerticalAlignment="Bottom">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*" />
-                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="3*" />
                     <ColumnDefinition Width="2*" />
                 </Grid.ColumnDefinitions>
                 <Button Content="{lex:Loc Options}" Grid.Column="0" HorizontalAlignment="Stretch" b:OpenOptionsOnClickBehavior.IsEnabled="True" />

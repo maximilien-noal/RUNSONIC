@@ -11,7 +11,7 @@
         xmlns:lex="http://wpflocalizeextension.codeplex.com"
   	    lex:ResxLocalizationProvider.DefaultAssembly="RUNSONIC"
   	    lex:ResxLocalizationProvider.DefaultDictionary="Localization"
-        ResizeMode="NoResize" WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize" WindowStartupLocation="CenterOwner" FontFamily="Arial"
         Background="#FFF0F0F0" FocusManager.FocusedElement="{Binding ElementName=OKButton}"
         Title="{lex:Loc OptionsDialog}" Height="154" Width="520"
         DataContext="{Binding Source={StaticResource Locator}, Path=Options}">
