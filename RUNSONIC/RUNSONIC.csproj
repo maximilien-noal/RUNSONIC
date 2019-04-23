@@ -115,6 +115,7 @@
     <Compile Include="Behaviors\OpenOptionsOnClickBehavior.cs" />
     <Compile Include="Behaviors\CloseOnClickBehavior.cs" />
     <Compile Include="Converters\MusicModeToBooleanConverter.cs" />
+    <Compile Include="Launch\GameLauncher.cs" />
     <Compile Include="Views\OptionsWindow.xaml.cs">
       <DependentUpon>OptionsWindow.xaml</DependentUpon>
     </Compile>

@@ -37,14 +37,14 @@ namespace Sega.Sonic3k.Launcher.Model
             }
         }
 
-        private bool _GfxAlternateMode = false;
+        private bool _gfxAlternateMode = false;
 
         public bool GfxAlternateMode
         {
-            get => _GfxAlternateMode;
+            get => _gfxAlternateMode;
             set
             {
-                Set(() => GfxAlternateMode, ref _GfxAlternateMode, value);
+                Set(() => GfxAlternateMode, ref _gfxAlternateMode, value);
             }
         }
     }

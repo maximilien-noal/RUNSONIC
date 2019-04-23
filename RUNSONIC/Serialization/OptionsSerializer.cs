@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.Reflection;
+﻿using Sega.Sonic3k.Launcher.Enums;
 using Sega.Sonic3k.Launcher.Model;
-using Sega.Sonic3k.Launcher.Enums;
+
+using System;
 
 namespace Sega.Sonic3k.Launcher.Serialization
 {
