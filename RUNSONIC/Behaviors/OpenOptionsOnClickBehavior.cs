@@ -1,4 +1,5 @@
 ﻿using Sega.Sonic3k.Launcher.Views;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -50,13 +51,12 @@ namespace Sega.Sonic3k.Launcher.Behaviors
             if (button == null)
                 return;
 
-            var win = Window.GetWindow(button);
-            if (win == null)
-                return;
+            //var win = Window.GetWindow(button);
+            //if (win == null)
+            //    return;
 
-            var optionsWindow = new OptionsWindow();
-            optionsWindow.Owner = win;
-            optionsWindow.ShowDialog();
+            Process.Start("SegaPCReloaded.exe");
+            Application.Current.MainWindow.Close();
         }
 
     }
