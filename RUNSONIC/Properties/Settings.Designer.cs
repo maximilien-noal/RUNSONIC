@@ -22,53 +22,5 @@ namespace Sega.Sonic3k.Launcher.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool IsDdrawWrapperDisabled {
-            get {
-                return ((bool)(this["IsDdrawWrapperDisabled"]));
-            }
-            set {
-                this["IsDdrawWrapperDisabled"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("FMSynth")]
-        public string MusicMode {
-            get {
-                return ((string)(this["MusicMode"]));
-            }
-            set {
-                this["MusicMode"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool GfxAlternateMode {
-            get {
-                return ((bool)(this["GfxAlternateMode"]));
-            }
-            set {
-                this["GfxAlternateMode"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool NoSoundFx {
-            get {
-                return ((bool)(this["NoSoundFx"]));
-            }
-            set {
-                this["NoSoundFx"] = value;
-            }
-        }
     }
 }

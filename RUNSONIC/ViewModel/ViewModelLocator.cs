@@ -13,7 +13,7 @@
 */
 
 using CommonServiceLocator;
-using GalaSoft.MvvmLight;
+
 using GalaSoft.MvvmLight.Ioc;
 
 namespace Sega.Sonic3k.Launcher.ViewModel
@@ -43,7 +43,6 @@ namespace Sega.Sonic3k.Launcher.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainViewModel>();
-            SimpleIoc.Default.Register<OptionsViewModel>();
         }
 
         public MainViewModel Main
@@ -54,14 +53,6 @@ namespace Sega.Sonic3k.Launcher.ViewModel
             }
         }
 
-        public OptionsViewModel Options
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<OptionsViewModel>();
-            }
-        }
-        
         public static void Cleanup()
         {
             // TODO Clear the ViewModels

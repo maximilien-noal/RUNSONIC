@@ -1,5 +1,4 @@
-﻿using Sega.Sonic3k.Launcher.Views;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -51,8 +50,15 @@ namespace Sega.Sonic3k.Launcher.Behaviors
             if (button == null)
                 return;
 
-            Process.Start("Help.pdf");
-            Application.Current.MainWindow.Close();
+            try
+            {
+                Process.Start("Help.pdf");
+                Application.Current.MainWindow.Close();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }

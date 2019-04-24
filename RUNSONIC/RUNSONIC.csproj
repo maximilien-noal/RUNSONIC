@@ -112,29 +112,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Behaviors\CloseOnClickBehavior.cs" />
     <Compile Include="Behaviors\OpenHelpOnClickBehavior.cs" />
     <Compile Include="Behaviors\OpenOptionsOnClickBehavior.cs" />
-    <Compile Include="Behaviors\CloseOnClickBehavior.cs" />
-    <Compile Include="Converters\MusicModeToBooleanConverter.cs" />
     <Compile Include="Launch\GameLauncher.cs" />
-    <Compile Include="Views\OptionsWindow.xaml.cs">
-      <DependentUpon>OptionsWindow.xaml</DependentUpon>
-    </Compile>
     <Page Include="Views\App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="InstanceModel\SingleInstance.cs" />
-    <Compile Include="Enums\MusicMode.cs" />
     <Compile Include="Model\GameModel.cs" />
-    <Compile Include="Model\OptionsModel.cs" />
     <Compile Include="Properties\Localization.fr-FR.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Localization.fr-FR.resx</DependentUpon>
     </Compile>
-    <Compile Include="Serialization\OptionsSerializer.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\OptionsViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -148,10 +140,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\OptionsWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

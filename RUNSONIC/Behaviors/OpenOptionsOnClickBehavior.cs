@@ -1,5 +1,4 @@
-﻿using Sega.Sonic3k.Launcher.Views;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -50,9 +49,15 @@ namespace Sega.Sonic3k.Launcher.Behaviors
             var button = sender as Button;
             if (button == null)
                 return;
-
-            Process.Start("SegaPCReloaded.exe");
-            Application.Current.MainWindow.Close();
+            try
+            {
+                Process.Start("SegaPCReloaded.exe");
+                Application.Current.MainWindow.Close();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }
