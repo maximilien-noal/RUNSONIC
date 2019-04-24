@@ -7,10 +7,6 @@ Sonic and Knuckles Collection modernized launcher
 * Uses WPFLocalizationExtension-signed for localization. Old, but works, and it is strongly named.
 * Uses PresentationFramework.Classic to mimic the original launcher's Windows 95-like style.
 * Mimics all the behaviors of the old launcher (eg. keyboard support, single-instance limitation, localization, modal dialogs)
-* Can disable the usage of modern DirectDraw wrappers for troubleshooting (eg. dgVoodoo2)
-* Kills the game when the window is closed but the process is still there.
-* [TODO] Retrieve debug options from %WINDIR%\S3K.INI just like the old launcher did.
-* [TODO] Retrieve and save options in HKLM\Software\Sonic3k\Options just like the old launcher did.
 
 But WHY ?
 ----------
