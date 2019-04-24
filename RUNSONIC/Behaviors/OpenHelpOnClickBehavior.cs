@@ -5,13 +5,13 @@ using System.Windows.Controls;
 
 namespace Sega.Sonic3k.Launcher.Behaviors
 {
-    public static class OpenOptionsOnClickBehavior
+    public static class OpenHelpOnClickBehavior
     {
         public static readonly DependencyProperty IsEnabledProperty =
             DependencyProperty.RegisterAttached(
                 "IsEnabled",
                 typeof(bool),
-                typeof(OpenOptionsOnClickBehavior),
+                typeof(OpenHelpOnClickBehavior),
                 new PropertyMetadata(false, OnIsEnabledPropertyChanged)
             );
 
@@ -51,7 +51,7 @@ namespace Sega.Sonic3k.Launcher.Behaviors
             if (button == null)
                 return;
 
-            Process.Start("SegaPCReloaded.exe");
+            Process.Start("Help.pdf");
             Application.Current.MainWindow.Close();
         }
 

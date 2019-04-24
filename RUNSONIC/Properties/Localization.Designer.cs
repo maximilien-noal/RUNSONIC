@@ -106,6 +106,15 @@ namespace Sega.Sonic3k.Launcher.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to - F4 : Display mode change - Alt-F4 : Exit game -.
+        /// </summary>
+        internal static string GameAid {
+            get {
+                return ResourceManager.GetString("GameAid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to General MIDI.
         /// </summary>
         internal static string GeneralMIDI {
@@ -120,6 +129,15 @@ namespace Sega.Sonic3k.Launcher.Properties {
         internal static string GraphicalGlitches {
             get {
                 return ResourceManager.GetString("GraphicalGlitches", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to _Help.
+        /// </summary>
+        internal static string Help {
+            get {
+                return ResourceManager.GetString("Help", resourceCulture);
             }
         }
         

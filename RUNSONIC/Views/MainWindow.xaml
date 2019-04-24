@@ -14,8 +14,11 @@
         Background="#FFF0F0F0" FocusManager.FocusedElement="{Binding ElementName=PlayButton}">
     <Window.InputBindings>
         <KeyBinding Key="S" Command="{Binding Exit}" />
+        <KeyBinding Key="E" Command="{Binding Exit}" />
         <KeyBinding Key="O" Command="{Binding ShowOptions}" />
         <KeyBinding Key="J" Command="{Binding Play}" />
+        <KeyBinding Key="P" Command="{Binding Play}" />
+        <KeyBinding Key="H" b:OpenHelpOnClickBehavior.IsEnabled="True" />
     </Window.InputBindings>
     <Grid Margin="14">
         <Grid.RowDefinitions>
@@ -44,6 +47,7 @@
                     <Button Content="►" Command="{Binding GoRight}" />
                 </StackPanel>
             </Grid>
+            <Label VerticalAlignment="Center" HorizontalAlignment="Center" Content="{lex:Loc GameAid}" />
             <Grid VerticalAlignment="Bottom">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*" />
@@ -51,6 +55,7 @@
                     <ColumnDefinition Width="2*" />
                 </Grid.ColumnDefinitions>
                 <Button Content="{lex:Loc Options}" Grid.Column="0" HorizontalAlignment="Stretch" b:OpenOptionsOnClickBehavior.IsEnabled="True" />
+                <Button Content="{lex:Loc Help}" Grid.Column="1" HorizontalAlignment="Center" b:OpenHelpOnClickBehavior.IsEnabled="True" />
                 <Button Content="{lex:Loc Exit}" Grid.Column="2" HorizontalAlignment="Stretch" IsCancel="True" b:CloseOnClickBehaviour.IsEnabled="True" />
             </Grid>
          </Grid>

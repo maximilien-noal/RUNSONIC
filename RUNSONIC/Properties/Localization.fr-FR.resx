@@ -132,11 +132,17 @@
   <data name="FMSynth" xml:space="preserve">
     <value>Synthétiseur FM</value>
   </data>
+  <data name="GameAid" xml:space="preserve">
+    <value>- F4 : Changer de mode d'affichage - Alt-F4 : Quitter le jeu -</value>
+  </data>
   <data name="GeneralMIDI" xml:space="preserve">
     <value>General MIDI</value>
   </data>
   <data name="GraphicalGlitches" xml:space="preserve">
     <value>Cochez cette case si vous rencontrez des bugs graphiques</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>_Aide</value>
   </data>
   <data name="MusicHeader" xml:space="preserve">
     <value>Réglage de la musique</value>

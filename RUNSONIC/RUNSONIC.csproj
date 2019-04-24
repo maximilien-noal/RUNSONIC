@@ -112,6 +112,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Behaviors\OpenHelpOnClickBehavior.cs" />
     <Compile Include="Behaviors\OpenOptionsOnClickBehavior.cs" />
     <Compile Include="Behaviors\CloseOnClickBehavior.cs" />
     <Compile Include="Converters\MusicModeToBooleanConverter.cs" />
