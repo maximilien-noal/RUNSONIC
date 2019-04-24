@@ -7,6 +7,7 @@ using Sega.Sonic3k.Launcher.Model;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
@@ -48,8 +49,8 @@ namespace Sega.Sonic3k.Launcher.ViewModel
         private void PlayExecute()
         {
             GameLauncher.LaunchGame(CurrentGame);
+            Application.Current.MainWindow.Close();
         }
-
 
         public ICommand GoLeft { get; private set; }
 
