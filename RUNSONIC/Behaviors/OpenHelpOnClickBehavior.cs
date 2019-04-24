@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Globalization;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -52,7 +53,14 @@ namespace Sega.Sonic3k.Launcher.Behaviors
 
             try
             {
-                Process.Start("Help.pdf");
+                if(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower() == "fr")
+                {
+                    Process.Start("Help-fr.pdf");
+                }
+                else
+                {
+                    Process.Start("Help.pdf");
+                }
                 Application.Current.MainWindow.Close();
             }
             catch (System.Exception ex)
