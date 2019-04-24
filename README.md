@@ -7,7 +7,6 @@ Sonic and Knuckles Collection modernized launcher
 * Uses WPFLocalizationExtension-signed for localization. Old, but works, and it is strongly named.
 * Uses PresentationFramework.Classic to mimic the original launcher's Windows 95-like style.
 * Mimics all the behaviors of the old launcher (eg. keyboard support, single-instance limitation, localization, modal dialogs)
-* Can disable the usage of modern DirectDraw wrappers for troubleshooting (eg. dgVoodoo2)
 * Kills the game when the window is closed but the process is still there.
 
 But WHY ?
