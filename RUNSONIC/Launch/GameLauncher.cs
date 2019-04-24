@@ -42,7 +42,7 @@ namespace Sega.Sonic3k.Launcher.Launch
         {
             _waitTimer = new System.Windows.Forms.Timer();
             _waitTimer.Tick += WaitTimer_Tick;
-            _waitTimer.Interval = 1000;
+            _waitTimer.Interval = 2000;
             _waitTimer.Enabled = true;
             _waitTimer.Start();
             Application.Current.Exit += delegate { _waitTimer.Dispose(); };
